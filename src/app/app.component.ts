@@ -1,4 +1,6 @@
-import { Component, Input  } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +10,17 @@ import { Component, Input  } from '@angular/core';
 
 export class AppComponent {
   person = 'X';
+  personXClass = '';
+  personOClass = '';
   finalWinner = null;
   blocks = Array(16).fill(null);
+
+  callTypeX(value){
+      this.personXClass = value;
+  }
+  callTypeY(value){
+      this.personOClass = value;
+  }
 
   hasWon() {
     const winningStates = [
@@ -27,8 +38,18 @@ export class AppComponent {
   }
 
   implementTurn(position) {
+    if(this.personXClass === '' || this.personOClass === '') {
+      alert("Please select colors for both players from the palette dropdown");
+      return;
+    }
     if(!this.finalWinner && !this.blocks[position] ){
       this.blocks[position] = this.person;
+      if(this.person === 'X') {
+        this.blocks[position] = this.personXClass;
+      }
+      else if(this.person === 'O'){
+        this.blocks[position] = this.personOClass;
+      }
       if(this.hasWon()) {
         this.finalWinner = this.person;
       }

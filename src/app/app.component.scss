@@ -12,11 +12,23 @@
   padding: 20px;
 }
 
+.palletteContainer {
+  display: flex;
+}
+
+.colorPickers {
+  display: flex;
+  margin: 20px;
+  @include font-size(1);
+}
+
+.dropdowns {
+  @include font-size(0.9);
+}
+
 .playground {
   display: flex;
-  background-color: $gray01;
   color: white;
-  border-radius: 4px;
 }
 
 .resetMe {

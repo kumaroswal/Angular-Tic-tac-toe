@@ -1,17 +1,37 @@
 <div class="parentContainer">
-		<div class="matchStatus" >
-			{{resultAnnouncement}}
-		</div>
-    <div>
-      <div class="playground" *ngFor="let row of [0,1,2,3]">
-        <tiles *ngFor="let col of [0,1,2,3]"
-        				(click)="implementTurn(col+row*4)"
-                [currentValue]="blocks[col+row*4]"
-        			>
-        </tiles>
-      </div>
+	<div class="matchStatus" >
+		{{resultAnnouncement}}
+	</div>
+  <div class="palletteContainer">
+    <div class="colorPickers">
+      X's color pallete:&nbsp;
+      <select #t (change)="callTypeX(t.value)" class="dropdowns">
+        <option [ngValue]="Select" > Select </option>
+        <option [ngValue]="orange" > orange </option>
+        <option [ngValue]="yellow" > yellow </option>
+        <option [ngValue]="green" > green </option>
+      </select>
     </div>
-    <div>
-      <button class="resetMe" (click)="resetMe()">Reset</button>
+    <div class="colorPickers">
+      O's color pallete:&nbsp;
+      <select #s (change)="callTypeY(s.value)" class="dropdowns">
+        <option [ngValue]="Select" > Select </option>
+        <option [ngValue]="purple" > purple </option>
+        <option [ngValue]="gray" > gray </option>
+        <option [ngValue]="beige" > beige </option>
+      </select>
     </div>
+  </div>
+  <div>
+    <div class="playground" *ngFor="let row of [0,1,2,3]">
+      <tiles *ngFor="let col of [0,1,2,3]"
+      				(click)="implementTurn(col+row*4)"
+              [currentValue]="blocks[col+row*4]"
+      			>
+      </tiles>
+    </div>
+  </div>
+  <div>
+    <button class="resetMe" (click)="resetMe()">Reset</button>
+  </div>
 </div>
