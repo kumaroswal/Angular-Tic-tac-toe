@@ -1,0 +1,35 @@
+@import "common/typography-style-guide/sass/style-guide.scss";
+
+.parentContainer {
+  margin: 0 auto;
+  width: 450px;
+  text-align: center;
+}
+
+.matchStatus {
+  text-align: center;
+  @include font-size(3);
+  padding: 20px;
+}
+
+.playground {
+  display: flex;
+  background-color: $gray01;
+  color: white;
+  border-radius: 4px;
+}
+
+.resetMe {
+  width: 100px;
+  padding: 12px;
+  margin: 20px;
+  @include font-size(1.8);
+  border-radius: 5px;
+  background-color: $blue01;
+  cursor: pointer;
+  transition: all .5s ease-in;
+}
+
+.resetMe:hover {
+  background-color: $blue02;
+}

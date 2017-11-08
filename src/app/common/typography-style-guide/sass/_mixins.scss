@@ -1,0 +1,21 @@
+//
+//  REM MIXIN
+//  Convert REM to PX and output REM with PX fallback
+//
+//------------------------------------------------------------------------------------
+
+@mixin font-size($sizeValue) {
+  $remValue: $sizeValue;
+  $pxValue: ($sizeValue * 10);
+
+  font-size: #{$pxValue}px;
+  font-size: #{$remValue}rem;
+}
+
+@mixin line-height($sizeValue) {
+  $remValue: $sizeValue;
+  $pxValue: ($sizeValue * 10);
+
+  line-height: #{$pxValue}px;
+  line-height: #{$remValue}rem;
+}
