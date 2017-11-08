@@ -64,8 +64,10 @@ export class AppComponent {
   }
 
   get resultAnnouncement(){
-    if(this.finalWinner)
-      return `${this.finalWinner} wins`;
+    if(this.finalWinner) {
+        alert(`${this.finalWinner} wins`);
+        return `${this.finalWinner} wins`;
+    }
     else
       return `${this.person}'s turn`;
   }
